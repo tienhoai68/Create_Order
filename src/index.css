@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.select-product:hover {
+  border-color: #03acf2 !important;
+}
+.select-product.ant-select .ant-select-selector {
+  border-radius: 14px;
+}
+.select-product.ant-select .ant-select-selector:hover {
+  border-color: #03acf2 !important;
+}
+.select-product-isHave.ant-select {
+  height: 42px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.select-product-isHave .ant-select-selector {
+  border: 1px solid #03acf2 !important;
+  color: #03acf2;
+}
+.select-product-isHave.ant-select .ant-select-selector {
+  border-radius: 14px;
+}
