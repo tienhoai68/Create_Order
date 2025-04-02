@@ -10,6 +10,7 @@ import TableCart from "@/components/common/TableCart";
 import CardPayment from "@/components/common/CardPayment";
 import ModalConfirm from "@/components/common/ModalConfirm";
 import formatCurrency from "@/utils/formatVND";
+import { toast } from "react-toastify";
 
 const CreateOrder = () => {
   const [order, setOrder] = useState({
@@ -39,12 +40,14 @@ const CreateOrder = () => {
     }),
     onSubmit: (values) => {
       if (order.cart.length === 0) {
+        toast.error("Vui lòng chọn sản phẩm");
         return;
       }
       if (
         order.paymentMethod === "cash" &&
         order.amountGiven < calculateTotal()
       ) {
+        toast.error("Vui lòng nhập số tiền khách đưa");
         return;
       }
       setModalValues(values);
@@ -77,6 +80,7 @@ const CreateOrder = () => {
       ...currentOrder,
       cart: currentOrder.cart.filter((item) => item.id !== id),
     }));
+    toast.success("Xóa sản phẩm thành công");
     formik.setFieldValue("product", "");
   };
 
@@ -130,6 +134,7 @@ const CreateOrder = () => {
       paymentMethod: "cash",
       amountGiven: 0,
     });
+    toast.success("Bạn đã thanh toán đơn hàng thành công!");
     formik.resetForm();
   };
   return (
