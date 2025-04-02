@@ -1,6 +1,6 @@
- const promotions = [
-  { code: "DISCOUNT10", type: "percent", value: 10 },
-  { code: "FLAT50", type: "amount", value: 50 },
+const promotions = [
+  { id: 1, code: "DISCOUNT10", type: "percent", value: 10 },
+  { id: 2, code: "OFF50", type: "fixed", value: 50 },
 ];
 
 export default promotions;

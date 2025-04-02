@@ -13,7 +13,7 @@
 .select-product-isHave.ant-select {
   height: 42px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 .select-product-isHave .ant-select-selector {
   border: 1px solid #03acf2 !important;
